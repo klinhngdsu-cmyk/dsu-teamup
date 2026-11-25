@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+/* Bảng màu đỏ – trắng theo tông nhận diện của DSU (lấy từ trang chủ trường) */
+@theme {
+  --color-brand: #b2252c; /* đỏ DSU */
+  --color-brand-deep: #771d26; /* đỏ đậm: mục menu đang chọn, nút khi rê chuột */
+  --color-brand-tint: #fbeced; /* nền hồng rất nhạt cho khung AI */
+  --color-ink: #23262d;
+  --color-ink-soft: #5d636e;
+  --color-paper: #f6f6f7;
+  --color-line: #e2e3e6;
+  --color-marker: #f6c9cc; /* vệt bút dạ quang hồng: chỉ đánh dấu phần khớp nhau */
+  --color-warn: #7a4f00;
+  --color-warn-line: #e0b252;
+  --color-ok: #1d6b47;
+  --color-stop: #a3261b; /* chỉ dùng cho lỗi */
+  --font-sans: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", "Segoe UI", system-ui, sans-serif;
+}
+
+html {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+/* Vệt bút dạ quang: chỉ dùng cho những gì thực sự khớp nhau */
+.marker {
+  background: linear-gradient(transparent 55%, var(--color-marker) 55%, var(--color-marker) 92%, transparent 92%);
+  padding: 0 0.15em;
+  font-weight: 600;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-brand);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
